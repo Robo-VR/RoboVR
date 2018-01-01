@@ -7,6 +7,8 @@ public class EnemyControl : MonoBehaviour
 {
     public GameObject Target;
 
+    public GameObject Enemy;
+
     public GameObject ExplosionEffect;
 
     NavMeshAgent agent;
@@ -16,12 +18,22 @@ public class EnemyControl : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
 
-        agent.destination = Target.transform.position;
+        agent.enabled = false;
+
+        if (transform.position.y >= 4.0f)
+        {
+            agent.enabled = true;
+
+            agent.destination = Target.transform.position;
+        }
+
+        //agent.destination = Target.transform.position;
     }
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+        
 	}
 
     void OnCollisionEnter(Collision other)
@@ -30,7 +42,16 @@ public class EnemyControl : MonoBehaviour
         {
             ExplosionEffect = (GameObject)Instantiate(ExplosionEffect,transform.position, Quaternion.identity);
             Destroy(ExplosionEffect, 1.2f);
+            Destroy(Enemy);
         }
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            Debug.Log("爆発");
+            //Destroy(Enemy);
+        }
+    }
 }

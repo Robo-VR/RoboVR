@@ -18,6 +18,8 @@ public class EnemyManager : MonoBehaviour
 
     public int maxEnemy =5;
 
+    public int AppearTime;
+
     void Start ()
     {
 
@@ -49,7 +51,7 @@ public class EnemyManager : MonoBehaviour
         while (true)
         {
             Generate();
-            yield return new WaitForSeconds(3.0f);
+            yield return new WaitForSeconds(AppearTime);
         }
     }
 
@@ -66,11 +68,11 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Destroy(NomalEnemy);
-        }
-    }
+    //void OnCollisionEnter(Collision other)
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        Destroy(NomalEnemy);
+    //    }
+    //}
 }

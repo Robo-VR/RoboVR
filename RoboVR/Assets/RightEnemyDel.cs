@@ -13,10 +13,10 @@ public class RightEnemyDel : MonoBehaviour {
 	void Update () {
 		
 	}
-    
-    void OnTriggerEnter2D(Collider2D coll)
+
+    void OnCollisionEnter(Collision other)
     {
-        if (coll.gameObject.tag == "RightHand")
+        if (other.gameObject.tag == "RightHand")
         {
             Destroy(this.gameObject);
         }

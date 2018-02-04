@@ -17,9 +17,9 @@ public class LeftEnemyDel : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D coll)
+    void OnCollisionEnter(Collision other)
     {
-        if (coll.gameObject.tag == "LeftHand")
+        if (other.gameObject.tag == "LeftHand")
         {
             Destroy(this.gameObject);
         }

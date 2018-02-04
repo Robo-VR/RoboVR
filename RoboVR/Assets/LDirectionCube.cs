@@ -21,11 +21,11 @@ public class LDirectionCube : MonoBehaviour {
         {
             transform.Rotate(new Vector3(0.0f, -1.0f, 0.0f));
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.S))
         {
             transform.Rotate(new Vector3(1.0f, 0.0f, 0.0f));
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.W))
         {
             transform.Rotate(new Vector3(-1.0f, 0.0f, 0.0f));
         }

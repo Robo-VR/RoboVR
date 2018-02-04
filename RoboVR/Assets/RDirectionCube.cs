@@ -21,11 +21,11 @@ public class RDirectionCube : MonoBehaviour {
         {
             transform.Rotate(new Vector3(0.0f, -1.0f, 0.0f));
         }
-        if (Input.GetKey(KeyCode.T))
+        if (Input.GetKey(KeyCode.G))
         {
             transform.Rotate(new Vector3(1.0f, 0.0f, 0.0f));
         }
-        if (Input.GetKey(KeyCode.G))
+        if (Input.GetKey(KeyCode.T))
         {
             transform.Rotate(new Vector3(-1.0f, 0.0f, 0.0f));
         }
